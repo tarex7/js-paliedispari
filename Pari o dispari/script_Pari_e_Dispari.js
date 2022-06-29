@@ -1,6 +1,6 @@
 let min = 1;
 let max = 5;
-let message = "";
+let message = "Hai perso";
 
 //*******FUNZIONI********
 //Genera numero casuale tra min e max
@@ -19,32 +19,36 @@ function isEven(a, b) {
 
 //Chiede input all'utente
 let userChoice = prompt("Scegli pari o dispari", "pari").toLowerCase();
-let userNumber = parseInt(prompt(`Scegli un numero tra ${min} e ${max}`, "2"));
 
 //!Validazione input testuale
 //Finchè l'utente non scrive "pari" o "dispari"
-while (userChoice != "pari" && userChoice != "dispari") {
+while (userChoice !== "pari" && userChoice !== "dispari") {
   //Mostra alert
   alert("Scrivi 'pari' o ''dispari'");
   //Richiede input
-  userChoice = prompt("Scegli pari o dispari", "pari");
+  userChoice = prompt("Scegli pari o dispari", "pari").toLowerCase();
 }
+
+//Chiede input all'utente
+let userNumber = parseInt(prompt(`Scegli un numero tra ${min} e ${max}`, "2"));
+
 //!Validazione input numerico
 //Finchè l'utente non inserisce un numero compreso tra min e max
 while (isNaN(userNumber) || userNumber < min || userNumber > max) {
   //Mostra alert
   alert(`Inserire un numero tra ${min} e ${max}`);
   //Richiede input
-  userNumber = prompt(`Scegli un numero tra ${min} e ${max}`, "2");
+  userNumber = parseInt(prompt(`Scegli un numero tra ${min} e ${max}`, "2"));
 }
 
 //Numero random CPU
 const CPUNumber = generateRndNumber(min, max);
 
-//Se il risultato della funzione isEven è true allora
+//Se il risultato della funzione isEven è true allora...
+let winner = "dispari";
+if (isEven(userNumber, CPUNumber)) winner = "pari";
 
-isEven(userNumber, CPUNumber) ? (winner = "pari") : (winner = "dispari");
-userChoice === winner ? (message = "Hai vinto!") : (message = "Hai perso!");
+if (userChoice === winner) message = "Hai vinto!";
 
 //Mostra messaggio all'utente
 console.log(`Hai scelto ${userChoice}`);
