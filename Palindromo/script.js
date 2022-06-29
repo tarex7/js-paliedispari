@@ -1,33 +1,34 @@
+//Chiede input
 let word = prompt("Inserisci una parola");
 
 //!Validazione
-while(!isNaN(word) || word.length < 2) {
-  alert('Devi inserire una parola di almeno due lettere')
-  word = prompt("Inserisci una parola");
+while (!isNaN(word) || word.length < 2) {
+  alert("Devi inserire una parola di almeno due lettere");
+  word = prompt("Inserisci una parola").trim();
 }
 
-let result = "";
-let message = `La parola ${word} NON è palindroma.`;
+//Variabili
+let flippedWord = "";
 let isPalindrome = false;
 
+//Invoca funzione
 findPalindrome();
 
+//Funzione
 function findPalindrome() {
   //Inverte la parola
   for (let i = word.length - 1; i >= 0; i--) {
-    result += word[i];
+    flippedWord += word[i];
   }
-
-  if (result === word) isPalindrome = true;
-
+  //Verifica se è palindroma
+  if (flippedWord === word) isPalindrome = true;
+  //Restituisci valore isPalindrome
   return isPalindrome;
 }
 
-if (isPalindrome) message = `La parola ${word} è palindroma.`;
+let message = `La parola '${word}' al contrario è '${flippedWord}', '${word}' NON è palindroma.`;
+
+if (isPalindrome)
+  message = `La parola '${word}' al contrario è '${flippedWord}', '${word}' è una parola palindroma.`;
 
 console.log(message);
-
-
-
-
-
