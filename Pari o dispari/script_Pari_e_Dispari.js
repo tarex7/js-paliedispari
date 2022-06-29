@@ -20,13 +20,10 @@ while (isNaN(userNumber) || userNumber < min || userNumber > max) {
 
 //Genera numero casuale tra min e max
 function generateRndNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return parseInt(Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
 const CPUNumber = generateRndNumber(min, max);
-
-//Somma numero utente e CPU
-let sum = parseInt(userNumber) + parseInt(CPUNumber);
 
 //Verifica se la somma è pari o dispari
 function isEven(a, b) {
@@ -42,7 +39,8 @@ const result = isEven(userNumber, CPUNumber);
 result ? (winner = "pari") : (winner = "dispari");
 userChoice === winner ? (message = "Hai vinto!") : (message = "Hai perso!");
 
-console.log("numero utente", userNumber);
+console.log(`Hai scelto ${userChoice}`);
+console.log("Hai inserito il numero", userNumber);
 console.log("numero CPU", CPUNumber);
-console.log(isEven());
+result ? console.log(`La somma di ${userNumber} e ${CPUNumber} è pari`) : console.log(`La somma di ${userNumber} e ${CPUNumber} è dispari`);
 console.log(message);
