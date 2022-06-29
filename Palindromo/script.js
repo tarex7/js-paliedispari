@@ -1,4 +1,11 @@
-const word = prompt("Inserisci una parola");
+let word = prompt("Inserisci una parola");
+
+//!Validazione
+while(!isNaN(word) || word.length < 2) {
+  alert('Devi inserire una parola di almeno due lettere')
+  word = prompt("Inserisci una parola");
+}
+
 let result = "";
 let message = `La parola ${word} NON è palindroma.`;
 let isPalindrome = false;
@@ -22,5 +29,5 @@ console.log(message);
 
 
 
-//********************************* PARI E DISPARI ***************************************//
+
 
