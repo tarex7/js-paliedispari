@@ -19,3 +19,8 @@ function findPalindrome() {
 if (isPalindrome) message = `La parola ${word} è palindroma.`;
 
 console.log(message);
+
+
+
+//********************************* PARI E DISPARI ***************************************//
+
