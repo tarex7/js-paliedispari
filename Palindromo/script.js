@@ -26,9 +26,10 @@ function findPalindrome() {
   return isPalindrome;
 }
 
-let message = `La parola '${word}' al contrario è '${flippedWord}', '${word}' NON è palindroma.`;
+let message = `La parola '${word}' al contrario è '${flippedWord}', La parola '${word}' `;
 
-if (isPalindrome)
-  message = `La parola '${word}' al contrario è '${flippedWord}', '${word}' è una parola palindroma.`;
+isPalindrome
+  ? (message += ` è una parola palindroma.`)
+  : (message += ` NON è una parola palindroma.`);
 
 console.log(message);
