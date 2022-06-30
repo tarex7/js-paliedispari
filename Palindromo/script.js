@@ -1,5 +1,5 @@
 //Chiede input
-let word = prompt("Inserisci una parola");
+let word = prompt("Inserisci una parola").trim();
 
 //!Validazione
 while (!isNaN(word) || word.length < 2) {
